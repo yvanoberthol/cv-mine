@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon cv</title>
+    <link rel="stylesheet" href="assets/bootstrap_spacelab.css">
+    <link rel="stylesheet" href="assets/font-awesome.css">
+    <style>
+        .scrollup {
+             width: 40px;
+             height: 40px;
+             position: fixed;
+             bottom: 10px;
+             right: 10px;
+             display: none;
+             color: #ccd3c0;
+             background-color: #3a3f51;
+             border: 1px solid #3a3f51;
+             font-size: 20px;
+             text-align: center;
+             line-height: 37px;
+             z-index: 3;
+         }
+
+        .scrollup:hover {
+            color: blanchedalmond;
+        }
+
+        .scrollbottom {
+            width: 40px;
+            height: 40px;
+            position: fixed;
+            top: 25px;
+            right: 10px;
+            display: block;
+            color: #ccd3c0;
+            background-color: #3a3f51;
+            border: 1px solid #3a3f51;
+            font-size: 20px;
+            text-align: center;
+            line-height: 37px;
+            z-index: 3;
+        }
+
+        .scrollbottom:hover {
+            color: blanchedalmond;
+        }
+
+        .message {
+            width: 40px;
+            height: 40px;
+            position: fixed;
+            bottom: 80px;
+            right: 10px;
+            display: block;
+            color: #ccd3c0;
+            background-color: #3a3f51;
+            border: 1px solid #3a3f51;
+            font-size: 20px;
+            text-align: center;
+            line-height: 37px;
+            z-index: 3;
+        }
+
+        .message:hover {
+            color: blanchedalmond;
+            cursor: pointer;
+        }
+
+        #form-message {
+            position: fixed;
+            bottom: 10px;
+            right: 60px;
+            display: none;
+            color: #ccd3c0;
+            background-color: #3a3f51;
+            border: 1px solid #3a3f51;
+            font-size: 20px;
+            text-align: center;
+            line-height: 37px;
+            z-index: 3;
+        }
+
+        .list-group-item{
+           background-color: rgba(250,100,100,0.1);
+            color: darkslategrey;
+        }
+
+        #fa p{
+            color: black;
+            justify-content: center;
+            margin-top: 0;
+            margin-bottom: 0;
+            border: black 2px solid;
+            width: 100%;
+            background-color: #ccd3c0;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        #af p{
+            color: black;
+            justify-content: center;
+            margin-top: 0;
+            margin-bottom: 0;
+            border: black 2px solid;
+            width: 100%;
+            background-color: #ccd3c0;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        p{
+            color: whitesmoke;
+            padding-left: 5px;
+        }
+        p>strong{
+            color: darkslategrey;
+        }
+        h3{
+            border: black 2px solid;
+            background-color: blanchedalmond;
+        }
+        h2{
+            border: black 2px solid;
+            background-color: blanchedalmond;
+        }
+         td{
+             margin: auto;
+             border: black 2px solid;
+             background-color: #ccd3c0;
+         }
+        #xp{
+            border: black 2px solid;
+            width: 99%;
+            background-color: #ccd3c0;
+            color: black;
+        }
+        #ef{
+            width: 99%;
+            color: black;
+        }
+        #fa{
+            width: 99%;
+            color: black;
+        }
+        #af{
+            width: 99%;
+            color: black;
+        }
+        #annee{
+            margin: auto;
+
+        }
+        #metier{
+            border-left: black 2px solid;
+        }
+        #menu{
+            background-color: #1b1b1b;
+            padding-top: 20px;
+            position: relative;
+            z-index: 2;
+            top: 0;
+        }
+        .metier{
+            color: green;
+            text-decoration: underline;
+        }
+        .menu-item{
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<a href="#" title="Haut de page" class="scrollup rounded"><span class="fa fa-arrow-up"></span></a>
+<button type="button" title="message" class="message rounded"><span class="fa fa-comment"></span></button>
+<a href="#back-page" title="Bas de page" class="scrollbottom rounded"><span class="fa fa-arrow-down"></span></a>
+<div class="col-md-3 col-sm-5" id="form-message">
+    <span class="faux" id="etat" style="display: none;"></span>
+    <h4 class="text-center text-white-50 mt-3"
+        style="border-bottom: blanchedalmond solid 3px">
+        Contactez moi
+    </h4>
+    <form id="form" method="post">
+        <div class="form-group text-left">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="form-group text-left">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="5">
+            </textarea>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-info"><span class="fa fa-send"></span> Envoyez</button>
+        </div>
+    </form>
+</div>
+<div class="container-fluid">
+    <div class="row" id="menu">
+        <div class="col-md-3 col-sm-12 text-md-right text-center menu-item">
+            <button href="#experience_professionnelle" class="btn btn-lg btn-outline-secondary click_xp">
+                <strong>XP PRO</strong>
+            </button>
+        </div>
+        <div class="col-md-3 col-sm-12 text-center menu-item">
+            <button href="#etude_formation" class="btn btn-lg btn-outline-secondary click_xp">
+                <strong>Etude et Formation</strong>
+            </button>
+        </div>
+
+        <div class="col-md-3 col-sm-12 text-center menu-item">
+            <button href="#formation_academique" class="btn btn-lg btn-outline-secondary click_xp" >
+                <strong>Formation académique</strong>
+            </button>
+        </div>
+
+        <div class="col-md-3 col-sm-12 text-center menu-item">
+            <button href="#autre_formation" class="btn btn-lg btn-outline-secondary click_xp" >
+                <strong>Autres formations</strong>
+            </button>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="text-center" style="background-color: rgba(100,100,100,0.5); padding-bottom: 20px">
+                <h1>NGUEDJEM DONGMO YVAN BERTHOLD</h1>
+                <img src="imgs/yvano.jpg" class="rounded img-fluid" style="height: 300px; width: 80%">
+                <div id="civil" class="mb-4 mt-2">
+                    <h3>ETAT CIVIL</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Né le 11/05/1997</li>
+                        <li class="list-group-item">Nationalité camerounaise</li>
+                        <li class="list-group-item">Célibataire</li>
+                    </ul>
+                </div>
+                <div id="coordonnees" class="mb-4">
+                    <h3>COORDONNEES</h3>
+                    <p><strong>Tel:</strong> 690735187</p>
+                    <p><strong>Email:</strong> yvanoberthol@gmail.com</p>
+                    <p><strong>Ville:</strong> Douala</p>
+                    <p><strong>Adresse:</strong> Rue Ngwèlè-Bonaberi</p>
+                </div>
+                <div id="langues" class="mb-4">
+                    <h3>LANGUES</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Français:</strong> Très bon niveau</li>
+                        <li class="list-group-item"><strong>Anglais:</strong> Moyen</li>
+                    </ul>
+                </div>
+                <div id="informatique" class="mb-4">
+                    <h3>BUREAUTIQUE INFORMATIQUE</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">MS Office Word</li>
+                        <li class="list-group-item">MS Office Excel</li>
+                        <li class="list-group-item">MS Office Access</li>
+                        <li class="list-group-item">MS Office PowerPoint</li>
+                    </ul>
+                </div>
+                <div id="centre_interet" class="mb-4">
+                    <h3>CENTRE D'INTERETS</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Loisirs :</strong> Voyage, Football (4 ans),
+                            Danse, Jogging, Basket, jeux vidéo
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Association :</strong> membre sur le site
+                            New developper’s, OpenClassRoom,
+                            StackOverFlow, Git Education
+                        </li>
+
+                    </ul>
+                </div>
+                <div id="certification">
+                    <h3>CERTIFICATIONS</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a class="list-group-item-action" href="imgs/certification_html_css.jpg">HTML5 et CSS3</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="text-center">
+                <h2 style="background-color: rgba(100,100,100,0.5)" class="pb-3">
+                    Développeur Web <span class="text-white">J2EE</span> et <span class="text-white">PHP</span><br>
+                    Administrateur de bases de données
+                </h2>
+                <div id="experience_professionnelle" class="mb-4 text-center">
+                    <h2 class="mb-0"><span class="fa fa-briefcase"></span> EXPERIENCES PROFESSIONNELLES</h2>
+                    <div class="row ml-1 mt-0" id="xp">
+                        <div class="col-md-3" id="annee">2017-2018</div>
+                        <div class="text-left col-md-9" id="metier">
+                            <span class="metier">Développeur Web</span> à <strong>HURUSPACE</strong><br>
+                            Activités :<br>
+                            <ul>
+                                <li>Conception d’applications web</li>
+                                <li>Développement de sites web</li>
+                                <li>Formation en développement web</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="etude_formation" class="mb-4 text-center">
+                    <h2 class="mb-0"><span class="fa fa-archive"></span> ETUDES ET FORMATIONS</h2>
+                    <div id="ef" class="ml-1">
+                        <table class="table" >
+                            <tr style="width: 100%">
+                                <td style="width: 26%">2016-2017</td>
+                                <td style="width: 74%">
+                                    Licence professionnelle en Gestion des projets
+                                    informatiques(GPI) à ISGET
+                                </td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width: 26%">2015-2016</td>
+                                <td style="width: 74%">
+                                    BTS en Informatique de Gestion (IG) à ISEM-IBCG
+                                </td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width: 26%">2013-2014</td>
+                                <td style="width: 74%">
+                                    Baccalauréat A4Esp au Lycée Bilingue de Bojongo
+                                </td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width: 26%">2012-2013</td>
+                                <td style="width: 74%">
+                                    Probatoire A4Esp au Lycée Bilingue de Bojongo
+                                </td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width: 26%">2010-2011</td>
+                                <td style="width: 74%">
+                                    BEPC série Esp au Lycée Bilingue de Bojongo
+                                </td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width: 26%">2006-2007</td>
+                                <td style="width: 74%">
+                                    CEP à l’école Pilote de Sodiko
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="formation_academique" class="mb-4 text-center">
+                    <h2 class="mb-0"><span class="fa fa-graduation-cap"></span> FORMATIONS ACADEMIQUES</h2>
+                    <div class="row ml-1 mt-0" id="fa">
+                        <p>
+                            Cours d’intelligence artificielle UML et d’analyse MERISE
+                        </p>
+                        <p>
+                            Cours de développement Web avec HTML5, CSS3, PHP
+                        </p>
+                        <p>
+                            Cours de base de données avancées MySQL, MS Access
+                        </p>
+                        <p>
+                            Cours de Visual Basic pour le développement des formulaires de gestion
+                        </p>
+                        <p>
+                            Cours sur le management des projets informatiques(PERT,
+                            Gantt)
+                        </p>
+                        <p>
+                            Cours sur la programmation orientée objet(POO) en Java, PHP
+                        </p>
+                    </div>
+                </div>
+
+                <div id="autre_formation" class="mb-4 text-center">
+                    <h2 class="mb-0"><span class="fa fa-dashcube"></span> AUTRES FORMATIONS</h2>
+                    <div class="row ml-1 mt-0" id="af">
+                        <p>
+                            Développement en PHP, VB.Net, Java, J2EE
+                        </p>
+                        <p>
+                            Formation Rest Full côté client : Angular 6, Angular Js
+                        </p>
+                        <p>
+                            Formation Rest Full côté serveur : Spring Boot, Laravel
+                        </p>
+                        <p>
+                            Object Relational Mapping(ORM): Hibernate
+                        </p>
+                        <p>
+                            Formation Androïd sur Androïd Studio
+                        </p>
+                        <p>
+                            Framework CSS Bootstrap, Foundation - Librairie JQuery
+                        </p>
+                        <p>
+                            Développement avec le design pattern MVC en JAVA et PHP
+                        </p>
+                        <p>
+                            Moteur de template JAVA: JSTL,Thymeleaf<br>
+                            Moteur de template PHP: Blade,Twig
+                        </p>
+                        <p>
+                            Gestionnaire Versioning : Git
+                        </p>
+                        <p>
+                            Gestionnaire de dépendances: composer, maven, gradle
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="row bg-dark pb-2 pt-2 mt-2" id="back-page">
+        <div class="col-md-12">
+            <h4 class="text-center text-white">YVANO BERTHOL @<span class="text-warning">2018</span></h4>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        // au clic sur un lien qui permet de scroller
+        $('.click_xp').on('click', function (evt) {
+            // bloquer le comportement par défaut: on ne rechargera pas la page
+            evt.preventDefault();
+            // enregistre la valeur de l'attribut  href dans la variable target
+            var target = $(this).attr('href');
+            /* le sélecteur $(html, body) permet de corriger un bug sur chrome
+            et safari (webkit) */
+            $('html, body')
+            // on arrête toutes les animations en cours
+                .stop()
+                /* on fait maintenant l'animation vers le haut (scrollTop) vers
+                 notre ancre target */
+                .animate({scrollTop: $(target).offset().top}, 800);
+        });
+
+        $('.message').click(function () {
+            if ($('#etat').hasClass("faux")){
+                $('#form-message').css('display','block');
+                $('#etat').addClass("vrai");
+                $('#etat').removeClass("faux");
+                return false;
+            }
+
+            if ($('#etat').hasClass("vrai")) {
+                $('#form-message').css('display','none');
+                $('#etat').addClass("faux");
+                $('#etat').removeClass("vrai");
+                return false;
+            }
+
+        });
+    });
+
+    // la fonction pour le scroller
+    ScrollToTop = function () {
+        var s = $(window).scrollTop();
+        if (s > $(window).width()/2) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+
+        $('.scrollup').click(function () {
+            $("html, body").animate({scrollTop: 0}, 500);
+            setTimeOut(500);
+            $('html, body').stop();
+            return false;
+        });
+    };
+    // la fonction pour le scroller
+    ScrollToDown = function () {
+        var sd = $(window).scrollTop();
+        if (sd > $(window).width()-$(window).width()/2) {
+            $('.scrollbottom').fadeOut();
+        } else {
+            $('.scrollbottom').fadeIn();
+        }
+
+        $('.scrollbottom').click(function () {
+            $('html, body')
+                .animate({scrollTop: $(window).width()+50}, 500);
+            setTimeOut(500);
+            $('html, body').stop();
+            return false;
+        });
+    };
+
+    $(window).scroll(function () {
+        // on appelle le scroller
+        ScrollToTop();
+        ScrollToDown();
+    });
+</script>
+</body>
+</html>
